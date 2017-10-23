@@ -1,0 +1,67 @@
+<template>
+  <div class="card">
+    <div class="card-header card-color color text-white">
+      <i class="fa fa-dashboard fa-fw"></i>
+      MODULES
+
+      <a id="reload" v-on:click="reload()" class="float-right text-white">
+        <i class="fa fa-refresh"></i>
+      </a>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th width="5%" scope="col">#</th>
+          <th scope="col">Module</th>
+          <th width="10%" scope="col">Status</th>
+          <th width="5%" class="text-center" scope="col">#</th>
+          <th width="5%" class="text-center" scope="col">#</th>
+          <th width="5%" class="text-center" scope="col">#</th>
+        </tr>
+        </thead>
+        <tbody v-for="module in modules">
+        <tr>
+          <th scope="row">{{module.id}}</th>
+          <td>{{module.name}}</td>
+          <td>
+            {{module.status === 1 ? 'Ativado' : 'Desativado'}}
+          </td>
+          <td class="text-center">
+            <a onclick="">
+              <i class="fa fa-save fa-fw text-success"></i>
+            </a>
+          </td>
+          <td class="text-center">
+            <a v-on:click="remove(module.id)">
+              <i class="fa fa-remove fa-fw text-danger"></i>
+            </a>
+          </td>
+          <td class="text-center">
+            <a onclick="">
+              <i class="fa fa-cog fa-fw text-primary"></i>
+            </a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>
+
+<script>
+  import { methods } from './methods'
+  import { data } from './data'
+
+  export default {
+    name: 'Modules',
+    data,
+    methods,
+    mounted: function () {
+      this.getData()
+    }
+  }
+</script>
+
+<style>
+</style>
