@@ -4,6 +4,7 @@
   "description": "A WebClient for RaspConfig",
   "author": "Douglas Zuqueto <douglas.zuqueto@gmail.com>",
   "private": true,
+  "repository": "https://github.com/raspi-config/vue-client",
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "npm run dev",
