@@ -4,14 +4,12 @@ export const methods = {
   getData: function () {
     const element = document.getElementById('loader')
     element.classList.remove('loader-hidden')
-    setTimeout(() => {
-      http.get('/pages/modules')
-        .then((response) => response.data)
-        .then((data) => {
-          this.modules = data
-          element.classList.add('loader-hidden')
-        })
-    }, 1000)
+    http.get('/pages/modules')
+      .then((response) => response.data)
+      .then((data) => {
+        this.modules = data
+        element.classList.add('loader-hidden')
+      })
   },
   remove: function (id) {
     console.log(id)

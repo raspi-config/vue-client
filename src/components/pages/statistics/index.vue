@@ -118,16 +118,14 @@
         const self = this
         const element = document.getElementById('loader')
         element.classList.remove('loader-hidden')
-        setTimeout(() => {
-          http.get('/pages/dashboard')
-            .then((response) => response.data)
-            .then((data) => {
-              self.temperature = data.temperature
-              self.memory = data.memory.usage
-              self.cpu = data.cpu.usage
-              element.classList.add('loader-hidden')
-            })
-        }, 1500)
+        http.get('/pages/dashboard')
+          .then((response) => response.data)
+          .then((data) => {
+            self.temperature = data.temperature
+            self.memory = data.memory.usage
+            self.cpu = data.cpu.usage
+            element.classList.add('loader-hidden')
+          })
       },
       reload: function () {
         this.getData()
