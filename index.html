@@ -10,22 +10,28 @@
   <title>RaspiConfig</title>
 </head>
 <body>
+<div id="loader" class="loader-hidden">
+  <div class="loader"></div>
+</div>
 <div id="app"></div>
 <!-- built files will be auto injected -->
 
 <style>
-
-  .loader-hidden {
-    display: none;
-  }
-
   a {
     cursor: pointer;
   }
 
-  #loader {
-    left: 50%;
+  #loader{
+    width: 100%;
+    height:100%;
+    background: rgba(255, 255, 255, .9);
+    position:fixed;
+    z-index:99999;
+  }
+
+  .loader {
     top: 40%;
+    /*left: 45%;*/
     z-index: 9999;
     position: absolute;
     border: 16px solid #f3f3f3;
@@ -36,6 +42,10 @@
     height: 120px;
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
+  }
+
+  .loader-hidden {
+    display: none;
   }
 
   @-webkit-keyframes spin {

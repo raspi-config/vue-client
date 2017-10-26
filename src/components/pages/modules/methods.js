@@ -1,14 +1,15 @@
 import { http } from '../../../http'
 
+const loader = document.getElementById('loader')
+
 export const methods = {
   getData: function () {
-    const element = document.getElementById('loader')
-    element.classList.remove('loader-hidden')
+    loader.classList.remove('loader-hidden')
     http.get('/pages/modules')
       .then((response) => response.data)
       .then((data) => {
         this.modules = data
-        element.classList.add('loader-hidden')
+        loader.classList.add('loader-hidden')
       })
   },
   remove: function (id) {

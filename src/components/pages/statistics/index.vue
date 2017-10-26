@@ -101,6 +101,8 @@
 <script>
   import { http } from '../../../http'
 
+  const loader = document.getElementById('loader')
+
   export default {
     name: 'Dashboard',
     data () {
@@ -116,15 +118,14 @@
     methods: {
       getData: function () {
         const self = this
-        const element = document.getElementById('loader')
-        element.classList.remove('loader-hidden')
+        loader.classList.remove('loader-hidden')
         http.get('/pages/dashboard')
           .then((response) => response.data)
           .then((data) => {
             self.temperature = data.temperature
             self.memory = data.memory.usage
             self.cpu = data.cpu.usage
-            element.classList.add('loader-hidden')
+            loader.classList.add('loader-hidden')
           })
       },
       reload: function () {

@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <div id="loader" class="loader-hidden"></div>
     <app-header></app-header>
     <div class="container-fluid">
       <div class="row">
@@ -22,6 +21,10 @@
   import Header from '@/components/layout/Header'
   import Nav from '@/components/layout/Nav'
   import PageHeader from '@/components/layout/PageHeader'
+  import $ from 'jquery'
+
+  const loading = $('.loader')
+  loading.css('left', (window.innerWidth / 2) - (loading.width() / 2) - 15)
 
   export default {
     name: 'app',
