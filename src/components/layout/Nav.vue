@@ -27,12 +27,6 @@
         </a>
       </li>
       <li>
-        <a href="">
-          <i class="fa fa-user fa-fw"></i>
-          Users
-        </a>
-      </li>
-      <li>
         <router-link to="/modules">
           <i class="fa fa-th fa-fw"></i>
           Modules

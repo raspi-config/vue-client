@@ -8,6 +8,47 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0" id="side-menu">
+          <li class="nav-item active">
+            <router-link class="nav-link" to="/">
+              <i class="fa fa-dashboard fa-fw"></i>
+              Dashboard
+            </router-link>
+          </li>
+          <li>
+
+          </li>
+          <li class="nav-item active">
+            <router-link class="nav-link" to="/statistics">
+              <i class="fa fa-bar-chart fa-fw"></i>
+              Statistics
+            </router-link>
+          </li>
+          <li class="nav-item active">
+            <router-link class="nav-link" to="/wireless">
+              <i class="fa fa-wifi fa-fw"></i>
+              WiFi
+            </router-link>
+          </li>
+          <li class="nav-item active">
+            <a href="" class="nav-link">
+              <i class="fa fa-dot-circle-o fa-fw"></i>
+              Hotspot
+            </a>
+          </li>
+          <li class="nav-item active">
+            <router-link class="nav-link" to="/modules">
+              <i class="fa fa-th fa-fw"></i>
+              Modules
+            </router-link>
+          </li>
+          <li class="nav-item active">
+            <router-link class="nav-link" to="/system">
+              <i class="fa fa-cube fa-fw"></i>
+              System
+            </router-link>
+          </li>
+        </ul>
       </div>
 
       <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
@@ -47,58 +88,45 @@
   import { http } from '@/http'
   import swal from 'sweetalert'
 
+  const execute = (message, uri) => {
+    swal({
+      title: message,
+      icon: 'warning',
+      buttons: true,
+      dangerMode: true
+    })
+      .then((willDelete) => {
+        if (!willDelete) {
+          return
+        }
+        return http.get(uri)
+          .then((response) => response.data)
+          .then((data) => {
+            if (data.error) {
+              return swal({
+                icon: 'warning',
+                title: data.error_message
+              })
+            }
+            return swal({
+              icon: 'success',
+              title: 'Sucesso!'
+            })
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+      })
+  }
+
   export default {
     name: 'Header',
     methods: {
       shutdown: () => {
-        swal({
-          title: 'Shutdown the raspberry?',
-          icon: 'warning',
-          buttons: true,
-          dangerMode: true
-        })
-          .then((willDelete) => {
-            if (!willDelete) {
-              return swal.close()
-            }
-            return http.get('/rasp/shutdown')
-          })
-          .then((response) => response.data)
-          .then((data) => {
-            return swal(data.message, {
-              icon: 'success'
-            })
-          })
-          .catch(err => {
-            console.log(err)
-            swal.close()
-            swal.stopLoading()
-          })
+        execute('Deseja desligar a Raspberry?', 'rasp/shutdown')
       },
       reboot: () => {
-        swal({
-          title: 'Reboot the raspberry?',
-          icon: 'warning',
-          buttons: true,
-          dangerMode: true
-        })
-          .then((willDelete) => {
-            if (!willDelete) {
-              return swal.close()
-            }
-            return http.get('/rasp/reboot')
-          })
-          .then((response) => response.data)
-          .then((data) => {
-            return swal(data.message, {
-              icon: 'success'
-            })
-          })
-          .catch(err => {
-            console.log(err)
-            swal.close()
-            swal.stopLoading()
-          })
+        execute('Deseja reiniciar a Raspberry?', 'rasp/reboot')
       },
       refresh: () => {
         location.reload()
