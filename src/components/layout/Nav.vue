@@ -15,10 +15,10 @@
         </router-link>
       </li>
       <li>
-        <a href="">
-          <i class="fa fa-signal fa-fw"></i>
-          Wireless
-        </a>
+        <router-link to="/wireless">
+          <i class="fa fa-wifi fa-fw"></i>
+          WiFi
+        </router-link>
       </li>
       <li>
         <a href="">
