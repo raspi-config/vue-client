@@ -26,19 +26,19 @@
                   <tbody>
                   <tr>
                     <th scope="row">Hostname</th>
-                    <td>{{hostname}}</td>
+                    <td>{{info.hostname}}</td>
                   </tr>
                   <tr>
                     <th scope="row">Version</th>
-                    <td>{{version}}</td>
+                    <td>{{info.version}}</td>
                   </tr>
                   <tr>
                     <th scope="row">Kernel</th>
-                    <td>{{kernel}}</td>
+                    <td>{{info.kernel}}</td>
                   </tr>
                   <tr>
                     <th scope="row">Uptime</th>
-                    <td>{{uptime}}</td>
+                    <td>{{info.uptime}}</td>
                   </tr>
                   </tbody>
                 </table>
@@ -60,10 +60,7 @@
     name: 'System',
     data () {
       return {
-        hostname: null,
-        version: null,
-        uptime: null,
-        kernel: null
+        info: {}
       }
     },
     mounted: function () {
@@ -71,15 +68,12 @@
     },
     methods: {
       getData: function () {
-        const self = this
+        const vm = this
         loader.classList.remove('loader-hidden')
         http.get('/pages/dashboard')
           .then((response) => response.data)
           .then((response) => {
-            self.hostname = response.hostname
-            self.version = response.version
-            self.uptime = response.uptime
-            self.kernel = response.kernel
+            vm.info = response
             loader.classList.add('loader-hidden')
           })
           .catch((err) => {
