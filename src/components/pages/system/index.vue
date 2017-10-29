@@ -26,15 +26,19 @@
                   <tbody>
                   <tr>
                     <th scope="row">Hostname</th>
-                    <td>raspberrypi</td>
+                    <td>{{hostname}}</td>
                   </tr>
                   <tr>
                     <th scope="row">Version</th>
-                    <td>Raspberry PI 3 Model B</td>
+                    <td>{{version}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Kernel</th>
+                    <td>{{kernel}}</td>
                   </tr>
                   <tr>
                     <th scope="row">Uptime</th>
-                    <td>21 minutes</td>
+                    <td>{{uptime}}</td>
                   </tr>
                   </tbody>
                 </table>
@@ -48,15 +52,18 @@
 </template>
 
 <script>
-  //  import { http } from '../../../http'
+  import { http } from '../../../http'
+
+  const loader = document.getElementById('loader')
 
   export default {
     name: 'System',
     data () {
       return {
-        temperature: 0,
-        memory: 0,
-        cpu: 0
+        hostname: null,
+        version: null,
+        uptime: null,
+        kernel: null
       }
     },
     mounted: function () {
@@ -64,6 +71,21 @@
     },
     methods: {
       getData: function () {
+        const self = this
+        loader.classList.remove('loader-hidden')
+        http.get('/pages/dashboard')
+          .then((response) => response.data)
+          .then((response) => {
+            self.hostname = response.hostname
+            self.version = response.version
+            self.uptime = response.uptime
+            self.kernel = response.kernel
+            loader.classList.add('loader-hidden')
+          })
+          .catch((err) => {
+            console.log(err)
+            loader.classList.add('loader-hidden')
+          })
       },
       reload: function () {
         this.getData()
