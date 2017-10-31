@@ -4,6 +4,10 @@ export const data = () => {
       status: false,
       message: null
     },
-    wireless: {}
+    wireless: {},
+    wifi: {
+      ssid: null,
+      password: null
+    }
   }
 }

@@ -11,6 +11,10 @@ export const methods = {
         this.modules = data
         loader.classList.add('loader-hidden')
       })
+      .catch((err) => {
+        console.log(err)
+        loader.classList.add('loader-hidden')
+      })
   },
   remove: function (id) {
     console.log(id)

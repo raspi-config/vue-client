@@ -14,7 +14,8 @@
         <tr>
           <th width="5%" scope="col">#</th>
           <th scope="col">Module</th>
-          <th width="10%" scope="col">Status</th>
+          <th width="5%" class="text-center" scope="col">Status</th>
+          <th width="5%" class="text-center" scope="col">On boot?</th>
           <th width="5%" class="text-center" scope="col">#</th>
           <th width="5%" class="text-center" scope="col">#</th>
           <th width="5%" class="text-center" scope="col">#</th>
@@ -24,8 +25,11 @@
         <tr>
           <th scope="row">{{module.id}}</th>
           <td>{{module.name}}</td>
-          <td>
-            {{module.status === 1 ? 'Ativado' : 'Desativado'}}
+          <td class="text-center">
+            <i class="fa fa-check" v-bind:class="{'text-success': module.status}"></i>
+          </td>
+          <td class="text-center">
+            <i class="fa fa-check" v-bind:class="{'text-success': module.boot}"></i>
           </td>
           <td class="text-center">
             <a onclick="">
