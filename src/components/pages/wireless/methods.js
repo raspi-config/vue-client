@@ -40,6 +40,22 @@ export const methods = {
         this.error.message = err.message
       })
   },
+  apply: function () {
+    loader.classList.remove('loader-hidden')
+    http.get('/wifi/apply')
+      .then((response) => response.data)
+      .then((data) => {
+        loader.classList.add('loader-hidden')
+        if (data.error) {
+          throw new Error(data.error_message)
+        }
+      })
+      .catch((err) => {
+        loader.classList.add('loader-hidden')
+        this.error.status = true
+        this.error.message = err.message
+      })
+  },
   remove: function (id) {
     console.log(id)
   },
