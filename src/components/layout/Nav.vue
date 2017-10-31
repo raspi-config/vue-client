@@ -9,12 +9,6 @@
         </router-link>
       </li>
       <li>
-        <router-link to="/statistics">
-          <i class="fa fa-bar-chart fa-fw"></i>
-          Statistics
-        </router-link>
-      </li>
-      <li>
         <router-link to="/wireless">
           <i class="fa fa-wifi fa-fw"></i>
           WiFi

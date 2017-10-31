@@ -19,12 +19,6 @@
 
           </li>
           <li class="nav-item active">
-            <router-link class="nav-link" to="/statistics">
-              <i class="fa fa-bar-chart fa-fw"></i>
-              Statistics
-            </router-link>
-          </li>
-          <li class="nav-item active">
             <router-link class="nav-link" to="/wireless">
               <i class="fa fa-wifi fa-fw"></i>
               WiFi
