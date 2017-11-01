@@ -1,14 +1,18 @@
-<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><link rel="shortcut icon" type=image/png href=/static/images/favicon.png><title>RaspiConfig</title><link href=/static/css/app.32cabd625fbd98f82f301b10d89920d4.css rel=stylesheet></head><body><div id=app></div><style>.loader-hidden {
-    display: none;
-  }
-
-  a {
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><link rel="shortcut icon" type=image/png href=/static/images/favicon.png><title>RaspiConfig</title><link href=/static/css/app.cc921508344798592ec0d2ea5e5ae951.css rel=stylesheet></head><body><div id=loader class=loader-hidden><div class=loader></div></div><div id=app></div><style>a {
     cursor: pointer;
   }
 
-  #loader {
-    left: 50%;
+  #loader{
+    width: 100%;
+    height:100%;
+    background: rgba(255, 255, 255, .9);
+    position:fixed;
+    z-index:99999;
+  }
+
+  .loader {
     top: 40%;
+    /*left: 45%;*/
     z-index: 9999;
     position: absolute;
     border: 16px solid #f3f3f3;
@@ -19,6 +23,10 @@
     height: 120px;
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
+  }
+
+  .loader-hidden {
+    display: none;
   }
 
   @-webkit-keyframes spin {
@@ -37,4 +45,4 @@
     100% {
       transform: rotate(360deg);
     }
-  }</style><script type=text/javascript src=/static/js/manifest.9e1f81e8ea87e471320b.js></script><script type=text/javascript src=/static/js/vendor.b157062a86eea454789d.js></script><script type=text/javascript src=/static/js/app.6665fffb73714beb48f7.js></script></body></html>
+  }</style><script type=text/javascript src=/static/js/manifest.04db61b52ce13c74c762.js></script><script type=text/javascript src=/static/js/vendor.b157062a86eea454789d.js></script><script type=text/javascript src=/static/js/app.de0329f95b08e2e38740.js></script></body></html>
