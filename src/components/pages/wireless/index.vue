@@ -56,15 +56,15 @@
                 <tbody>
                 <tr>
                   <td>Rede</td>
-                  <td>zuqueto</td>
+                  <td>{{info.ssid}}</td>
                 </tr>
                 <tr>
                   <td>IP</td>
-                  <td>192.168.15.10</td>
+                  <td>{{info.ip}}</td>
                 </tr>
                 <tr>
-                  <td>Pacotes</td>
-                  <td>100212</td>
+                  <td>Qualidade do sinal</td>
+                  <td>{{info.link_quality}}</td>
                 </tr>
                 </tbody>
               </table>
@@ -74,7 +74,6 @@
       </div>
     </div>
 
-  </div>
   </div>
 </template>
 
