@@ -4,7 +4,7 @@
       <i class="fa fa-dashboard fa-wifi"></i>
       WIRELESS
 
-      <a id="reload" v-on:click="reload()" class="float-right text-white">
+      <a id="reload" @click="reload()" class="float-right text-white">
         <i class="fa fa-refresh"></i>
       </a>
     </div>
@@ -41,8 +41,8 @@
               </div>
             </div>
 
-            <button type="button" class="btn btn-primary" v-on:click="apply()">Aplicar</button>
-            <button type="button" class="btn btn-success" v-on:click="save()">Salvar</button>
+            <button type="button" class="btn btn-primary" @click="apply()">Aplicar</button>
+            <button type="button" class="btn btn-success" @click="save()">Salvar</button>
           </form>
         </div>
         <div class="col col-7">

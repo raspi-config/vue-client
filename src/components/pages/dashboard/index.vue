@@ -4,7 +4,7 @@
       <i class="fa fa-dashboard fa-fw"></i>
       DASHBOARD
 
-      <a id="reload" v-on:click="reload()" class="float-right text-white">
+      <a id="reload" @click="reload()" class="float-right text-white">
         <i class="fa fa-refresh"></i>
       </a>
     </div>

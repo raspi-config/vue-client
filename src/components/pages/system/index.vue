@@ -4,7 +4,7 @@
       <i class="fa fa-cube fa-fw"></i>
       SYSTEM
 
-      <a href="#" v-on:click="reload()" class="float-right text-white">
+      <a href="#" @click="reload()" class="float-right text-white">
         <i class="fa fa-refresh"></i>
       </a>
     </div>

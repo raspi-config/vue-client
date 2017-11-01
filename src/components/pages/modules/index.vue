@@ -4,7 +4,7 @@
       <i class="fa fa-dashboard fa-fw"></i>
       MODULES
 
-      <a id="reload" v-on:click="reload()" class="float-right text-white">
+      <a id="reload" @click="reload()" class="float-right text-white">
         <i class="fa fa-refresh"></i>
       </a>
     </div>
@@ -37,7 +37,7 @@
             </a>
           </td>
           <td class="text-center">
-            <a v-on:click="remove(module.id)">
+            <a @click="remove(module.id)">
               <i class="fa fa-remove fa-fw text-danger"></i>
             </a>
           </td>
