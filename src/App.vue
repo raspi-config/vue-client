@@ -5,7 +5,6 @@
       <div class="row">
         <app-nav></app-nav>
         <main role="main" class="col-sm-12 ml-sm-auto col-md-10 pt-3">
-          <page-header></page-header>
           <div class="row">
             <div class="col-sm-12">
               <router-view></router-view>
@@ -20,7 +19,6 @@
 <script>
   import Header from '@/components/layout/Header'
   import Nav from '@/components/layout/Nav'
-  import PageHeader from '@/components/layout/PageHeader'
   import $ from 'jquery'
 
   const loading = $('.loader')
@@ -30,8 +28,7 @@
     name: 'app',
     components: {
       'app-header': Header,
-      'app-nav': Nav,
-      'page-header': PageHeader
+      'app-nav': Nav
     }
   }
 </script>
