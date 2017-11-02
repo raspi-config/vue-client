@@ -1,9 +1,5 @@
-import Component from './index.vue'
+import component from './index.vue'
 
 export default [
-  {
-    path: '/modules',
-    name: 'Modules',
-    component: Component
-  }
+  {path: '/modules', component}
 ]

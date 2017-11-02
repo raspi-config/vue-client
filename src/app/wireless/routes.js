@@ -1,9 +1,5 @@
-import Component from './index.vue'
+import component from './index.vue'
 
 export default [
-  {
-    path: '/wireless',
-    name: 'Wireless',
-    component: Component
-  }
+  {path: '/wireless', component}
 ]
