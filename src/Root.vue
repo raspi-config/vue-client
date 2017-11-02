@@ -1,12 +1,13 @@
 <template>
   <div id="app">
+    <app-loader></app-loader>
     <app-header></app-header>
     <div class="container-fluid">
       <div class="row">
         <app-nav></app-nav>
         <main role="main" class="col-sm-12 ml-sm-auto col-md-10 pt-3">
           <div class="row">
-            <div class="col-sm-12">
+            <div class="col-12">
               <router-view></router-view>
             </div>
           </div>
@@ -17,16 +18,14 @@
 </template>
 
 <script>
-  import Header from '@/components/root/Header'
-  import Nav from '@/components/root/Nav'
-  import $ from 'jquery'
-
-  const loading = $('.loader')
-  loading.css('left', (window.innerWidth / 2) - (loading.width() / 2) - 15)
+  import Header from '@/components/root/header'
+  import Nav from '@/components/root/nav'
+  import Loader from '@/components/general/loader'
 
   export default {
     name: 'app',
     components: {
+      'app-loader': Loader,
       'app-header': Header,
       'app-nav': Nav
     }

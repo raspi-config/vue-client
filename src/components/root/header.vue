@@ -2,13 +2,13 @@
   <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top color">
       <router-link to="/" class="navbar-brand">RaspiConfig</router-link>
-      <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+      <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#toogleNavbar"
               aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0" id="side-menu">
+      <div class="collapse navbar-collapse" id="toogleNavbar">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 d-sm-none" id="side-menu">
           <li class="nav-item active">
             <router-link class="nav-link" to="/">
               <i class="fa fa-dashboard fa-fw"></i>
