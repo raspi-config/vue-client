@@ -17,7 +17,6 @@ http.interceptors.request.use((config) => {
 // Add a response interceptor
 http.interceptors.response.use((response) => {
   loader.classList.add('loader-hidden')
-  console.log(response)
   return response
 }, (error) => {
   loader.classList.add('loader-hidden')
