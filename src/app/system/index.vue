@@ -52,8 +52,6 @@
 </template>
 
 <script>
-  import { http } from '@/plugins/http/http'
-
   export default {
     name: 'System',
     data () {
@@ -67,7 +65,7 @@
     methods: {
       getData: function () {
         const vm = this
-        http.get('/pages/dashboard')
+        this.http.get('/pages/dashboard')
           .then((response) => response.data)
           .then((response) => {
             vm.info = response

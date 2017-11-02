@@ -1,15 +1,14 @@
-import { http } from '@/plugins/http/http'
 import axios from 'axios'
 
 export const methods = {
-  getListWifi: function () {
+  getListWifi: function (http) {
     return http.get('wifi/scan')
   },
-  getInfo: function () {
+  getInfo: function (http) {
     return http.get('wifi/info')
   },
   getData: function () {
-    axios.all([this.getListWifi(), this.getInfo()])
+    axios.all([this.getListWifi(this.http), this.getInfo(this.http)])
       .then(axios.spread((list, info) => {
         return {
           'list': list.data,
@@ -33,7 +32,7 @@ export const methods = {
       ssid: this.wifi.ssid,
       password: this.wifi.password
     }
-    http.post('/wifi/save', payload)
+    this.http.post('/wifi/save', payload)
       .then((response) => response.data)
       .then((data) => {
         if (data.error) {
@@ -46,7 +45,7 @@ export const methods = {
       })
   },
   apply: function () {
-    http.get('/wifi/apply')
+    this.http.get('/wifi/apply')
       .then((response) => response.data)
       .then((data) => {
         if (data.error) {

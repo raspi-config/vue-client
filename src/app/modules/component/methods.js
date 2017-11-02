@@ -1,8 +1,6 @@
-import { http } from '@/plugins/http/http'
-
 export const methods = {
   getData: function () {
-    http.get('/pages/modules')
+    this.http.get('/pages/modules')
       .then((response) => response.data)
       .then((data) => {
         this.modules = data
