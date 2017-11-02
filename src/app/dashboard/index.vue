@@ -94,8 +94,6 @@
 <script>
   import { http } from '@/plugins/http/http'
 
-  const loader = document.getElementById('loader')
-
   export default {
     name: 'Dashboard',
     data () {
@@ -113,21 +111,17 @@
     methods: {
       getData: function () {
         const self = this
-        loader.classList.remove('loader-hidden')
         http.get('/pages/dashboard')
           .then((response) => response.data)
           .then((response) => {
-            console.log(response)
             self.temperature = response.temperature
             self.memory = response.memory
             self.cpu = response.cpu
             self.kernel = response.kernel
             self.process = response.process
-            loader.classList.add('loader-hidden')
           })
           .catch((err) => {
             console.log(err)
-            loader.classList.add('loader-hidden')
           })
       },
       reload: function () {

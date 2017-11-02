@@ -54,8 +54,6 @@
 <script>
   import { http } from '@/plugins/http/http'
 
-  const loader = document.getElementById('loader')
-
   export default {
     name: 'System',
     data () {
@@ -69,16 +67,13 @@
     methods: {
       getData: function () {
         const vm = this
-        loader.classList.remove('loader-hidden')
         http.get('/pages/dashboard')
           .then((response) => response.data)
           .then((response) => {
             vm.info = response
-            loader.classList.add('loader-hidden')
           })
           .catch((err) => {
             console.log(err)
-            loader.classList.add('loader-hidden')
           })
       },
       reload: function () {
