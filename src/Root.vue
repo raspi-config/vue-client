@@ -34,15 +34,15 @@
 
 <style>
   .text-color {
-    color: #D8224C;
+    color: #D8224C
   }
 
   .color {
-    background-color: #D8224C;
+    background-color: #D8224C
   }
 
   /* Move down content because we have a fixed navbar that is 3.5rem tall */
   body {
-    padding-top: 3.5rem;
+    padding-top: 3.5rem
   }
 </style>

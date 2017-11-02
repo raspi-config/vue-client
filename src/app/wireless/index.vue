@@ -56,15 +56,15 @@
                 <tbody>
                 <tr>
                   <td>Rede</td>
-                  <td>{{info.ssid}}</td>
+                  <td>{{info.ssid || 'Não conectado'}}</td>
                 </tr>
                 <tr>
                   <td>IP</td>
-                  <td>{{info.ip}}</td>
+                  <td>{{info.ip || '-'}}</td>
                 </tr>
                 <tr>
                   <td>Qualidade do sinal</td>
-                  <td>{{info.link_quality}}</td>
+                  <td>{{info.link_quality || '-'}}</td>
                 </tr>
                 </tbody>
               </table>
