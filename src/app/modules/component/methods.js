@@ -1,4 +1,4 @@
-import { http } from '../../../http'
+import { http } from '@/plugins/http/http'
 
 const loader = document.getElementById('loader')
 

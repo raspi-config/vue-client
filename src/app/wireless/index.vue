@@ -15,7 +15,7 @@
       </div>
 
       <div class="row">
-        <div class="col col-5">
+        <div class="col col-sm-12 col-md-6">
           <form action="">
             <div class="form-group">
               <label class="col-form-label" for="ssid">SSID</label>
@@ -45,7 +45,7 @@
             <button type="button" class="btn btn-success" @click="save()">Salvar</button>
           </form>
         </div>
-        <div class="col col-7">
+        <div class="col col-sm-12 col-md-6">
           <div class="card">
             <div class="card-header text-danger">
               Informações
@@ -78,8 +78,8 @@
 </template>
 
 <script>
-  import { methods } from './methods'
-  import { data } from './data'
+  import { methods } from './component/methods'
+  import { data } from './component/data'
 
   export default {
     name: 'Wireless',

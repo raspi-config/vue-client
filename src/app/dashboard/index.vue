@@ -11,85 +11,75 @@
     <div class="card-body">
 
       <div class="row">
-        <div class="col-sm-12 col-xl-3">
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-2">
           <div class="card">
-            <div class="card-header text-white bg-secondary">
-              Temperatura
-            </div>
+            <div class="card-header text-white bg-secondary text-center">Temperatura</div>
             <div class="card-body">
               <div class="row">
-                <div class="col-sm-4">
+                <div class="col-4 text-center">
                   <i class="fa fa-thermometer-empty fa-3x"></i>
                 </div>
-                <div class="col-sm-8">
+                <div class="col-8 card-top">
                   <h4 class="card-text">{{temperature}}º</h4>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-12 col-xl-3">
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-2">
           <div class="card">
-            <div class="card-header text-white bg-secondary">
-              Memória
-            </div>
+            <div class="card-header text-white bg-secondary text-center">Memória</div>
             <div class="card-body">
               <div class="row">
-                <div class="col-sm-4">
+                <div class="col-4 text-center">
                   <i class="fa fa-microchip fa-3x"></i>
                 </div>
-                <div class="col-sm-8">
+                <div class="col-8 card-top">
                   <h4 class="card-text">{{memory.usage}}mb</h4>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-12 col-xl-3">
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-2">
           <div class="card">
-            <div class="card-header text-white bg-secondary">
-              CPU
-            </div>
+            <div class="card-header text-white bg-secondary text-center">CPU</div>
             <div class="card-body">
               <div class="row">
-                <div class="col-sm-4">
+                <div class="col-4 text-center">
                   <i class="fa fa-server fa-3x"></i>
                 </div>
-                <div class="col-sm-8">
+                <div class="col-8 card-top">
                   <h4 class="card-text">{{cpu.usage}}%</h4>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-12 col-xl-3">
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-2">
           <div class="card">
-            <div class="card-header text-white bg-secondary">
-              Processos
-            </div>
+            <div class="card-header text-white bg-secondary text-center">Processos</div>
             <div class="card-body">
               <div class="row">
-                <div class="col-sm-4">
+                <div class="col-4 text-center">
                   <i class="fa fa-tasks fa-3x"></i>
                 </div>
-                <div class="col-sm-8">
+                <div class="col-8 card-top">
                   <h4 class="card-text">{{process}}</h4>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-12 col-xl-3">
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-2">
           <div class="card">
-            <div class="card-header text-white bg-secondary">
-              Kernel
-            </div>
+            <div class="card-header text-white bg-secondary text-center">Kernel</div>
             <div class="card-body">
               <div class="row">
-                <div class="col-sm-4">
+                <div class="col-4">
                   <i class="fa fa-tasks fa-3x"></i>
                 </div>
-                <div class="col-sm-8">
+                <div class="col-8 card-top">
                   <h4 class="card-text">{{kernel}}</h4>
                 </div>
               </div>
@@ -102,7 +92,7 @@
 </template>
 
 <script>
-  import { http } from '../../../http'
+  import { http } from '@/plugins/http/http'
 
   const loader = document.getElementById('loader')
 
@@ -148,6 +138,10 @@
 </script>
 
 <style>
+  .card-top {
+    margin-top: 8px;
+  }
+
   .card-color {
     border: 1px solid #d8224c;
   }

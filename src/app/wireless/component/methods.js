@@ -1,4 +1,4 @@
-import { http } from '@/http'
+import { http } from '@/plugins/http/http'
 import axios from 'axios'
 
 const loader = document.getElementById('loader')

@@ -4,7 +4,7 @@ import 'font-awesome/css/font-awesome.min.css'
 // import 'toastr/build/toastr.min.css'
 
 import Vue from 'vue'
-import App from './App'
+import Root from './Root'
 import router from './router'
 
 Vue.config.productionTip = false
@@ -12,6 +12,6 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  template: '<App/>',
-  components: {App}
+  template: '<Root/>',
+  components: {Root}
 })

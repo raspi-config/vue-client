@@ -54,8 +54,8 @@
 </template>
 
 <script>
-  import { methods } from './methods'
-  import { data } from './data'
+  import { methods } from './component/methods'
+  import { data } from './component/data'
 
   export default {
     name: 'Modules',

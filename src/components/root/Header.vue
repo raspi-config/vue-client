@@ -1,7 +1,7 @@
 <template>
   <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top color">
-      <a class="navbar-brand" href="#">RaspConfig v1.0.0</a>
+      <router-link to="/" class="navbar-brand">RaspiConfig</router-link>
       <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
               aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -79,7 +79,7 @@
 </template>
 
 <script>
-  import { http } from '@/http'
+  import { http } from '@/plugins/http/http'
   import swal from 'sweetalert'
 
   const execute = (message, uri) => {
