@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card-header card-color color text-white">
-      <i class="fa fa-dashboard fa-fw"></i>
+      <i class="fa fa-th fa-fw"></i>
       MODULES
 
       <a id="reload" @click="reload()" class="float-right text-white">
@@ -9,7 +9,7 @@
       </a>
     </div>
     <div class="card-body">
-      <table class="table table-bordered">
+      <table class="table table-bordered table-responsive">
         <thead>
         <tr>
           <th width="5%" scope="col">#</th>

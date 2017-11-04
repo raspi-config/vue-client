@@ -44,6 +44,12 @@
                 </table>
               </div>
             </div>
+            <div class="row">
+              <div class="col-12 form-group">
+                <app-shutdown class="btn btn-primary"></app-shutdown>
+                <app-reboot class="btn btn-success"></app-reboot>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -53,9 +59,14 @@
 
 <script>
   import { getDashboard } from './services'
+  import { reboot, shutdown } from '@/components/general'
 
   export default {
     name: 'System',
+    components: {
+      'app-reboot': reboot,
+      'app-shutdown': shutdown
+    },
     data () {
       return {
         info: {}

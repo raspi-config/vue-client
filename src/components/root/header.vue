@@ -47,7 +47,7 @@
 
       <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
         <li class="nav-item">
-          <a href="https://github.com/dougalszuqueto/raspconfig" target="_blank" class="nav-link p-2 text-white">
+          <a href="https://github.com/raspi-config/raspi-config" target="_blank" class="nav-link p-2 text-white">
             <i class="fa fa-github"></i>
           </a>
         </li>
@@ -58,16 +58,10 @@
             Douglas Zuqueto
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
-            <a class="dropdown-item" v-on:click="shutdown">
-              <i class="fa fa-power-off"></i>
-              Shutdown
-            </a>
-            <a class="dropdown-item" v-on:click="reboot">
-              <i class="fa fa-undo"></i>
-              Reboot
-            </a>
+            <app-shutdown class="dropdown-item"></app-shutdown>
+            <app-reboot class="dropdown-item"></app-reboot>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" v-on:click="refresh">
+            <a class="dropdown-item" @click="refresh">
               <i class="fa fa-refresh"></i>
               Refresh
             </a>
@@ -79,49 +73,16 @@
 </template>
 
 <script>
-  import { http } from '@/plugins/http/http'
-  import swal from 'sweetalert'
-
-  const execute = (message, uri) => {
-    swal({
-      title: message,
-      icon: 'warning',
-      buttons: true,
-      dangerMode: true
-    })
-      .then((willDelete) => {
-        if (!willDelete) {
-          return
-        }
-        return http.get(uri)
-          .then((response) => response.data)
-          .then((data) => {
-            if (data.error) {
-              return swal({
-                icon: 'warning',
-                title: data.error_message
-              })
-            }
-            return swal({
-              icon: 'success',
-              title: 'Sucesso!'
-            })
-          })
-          .catch((err) => {
-            console.log(err)
-          })
-      })
-  }
+  import Reboot from '../general/reboot'
+  import Shutdown from '../general/shutdown'
 
   export default {
     name: 'Header',
+    components: {
+      'app-reboot': Reboot,
+      'app-shutdown': Shutdown
+    },
     methods: {
-      shutdown: () => {
-        execute('Deseja desligar a Raspberry?', 'rasp/shutdown')
-      },
-      reboot: () => {
-        execute('Deseja reiniciar a Raspberry?', 'rasp/reboot')
-      },
       refresh: () => {
         location.reload()
       }
