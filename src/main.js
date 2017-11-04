@@ -8,6 +8,7 @@ import { http } from '@/plugins/http/http'
 import Vue from 'vue'
 import Root from './Root'
 import router from './router'
+import { store } from './vuex'
 
 Vue.config.productionTip = false
 Vue.prototype.http = http
@@ -16,6 +17,7 @@ Vue.prototype.http = http
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<Root/>',
   components: {Root}
 })
