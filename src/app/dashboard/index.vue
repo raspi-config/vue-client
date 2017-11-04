@@ -97,10 +97,14 @@
     data () {
       return {
         temperature: 0,
-        memory: {},
-        cpu: {},
-        kernel: null,
-        process: null
+        memory: {
+          usage: 0
+        },
+        cpu: {
+          usage: 0
+        },
+        kernel: '-',
+        process: 0
       }
     },
     mounted: function () {
