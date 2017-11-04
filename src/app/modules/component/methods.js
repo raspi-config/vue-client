@@ -1,7 +1,8 @@
+import { getModules } from '../services/index'
+
 export const methods = {
   getData: function () {
-    this.http.get('/pages/modules')
-      .then((response) => response.data)
+    getModules()
       .then((data) => {
         this.modules = data
       })

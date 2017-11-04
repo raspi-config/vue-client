@@ -1,19 +1,11 @@
 import axios from 'axios'
+import { getInfo, getList, save as wifiSave, apply as wifiApply } from '../services/index'
 
 export const methods = {
-  getListWifi: function (http) {
-    return http.get('wifi/scan')
-  },
-  getInfo: function (http) {
-    return http.get('wifi/info')
-  },
   getData: function () {
-    axios.all([this.getListWifi(this.http), this.getInfo(this.http)])
+    axios.all([getList(), getInfo()])
       .then(axios.spread((list, info) => {
-        return {
-          'list': list.data,
-          'info': info.data
-        }
+        return {list, info}
       }))
       .then((response) => {
         if (response.list.error) {
@@ -32,8 +24,7 @@ export const methods = {
       ssid: this.wifi.ssid,
       password: this.wifi.password
     }
-    this.http.post('/wifi/save', payload)
-      .then((response) => response.data)
+    wifiSave(payload)
       .then((data) => {
         if (data.error) {
           throw new Error(data.error_message)
@@ -45,8 +36,7 @@ export const methods = {
       })
   },
   apply: function () {
-    this.http.get('/wifi/apply')
-      .then((response) => response.data)
+    wifiApply()
       .then((data) => {
         if (data.error) {
           throw new Error(data.error_message)
@@ -56,9 +46,6 @@ export const methods = {
         this.error.status = true
         this.error.message = err.message
       })
-  },
-  remove: function (id) {
-    console.log(id)
   },
   reload: function () {
     this.wireless = {}

@@ -52,6 +52,8 @@
 </template>
 
 <script>
+  import { getDashboard } from './services'
+
   export default {
     name: 'System',
     data () {
@@ -65,8 +67,7 @@
     methods: {
       getData: function () {
         const vm = this
-        this.http.get('/pages/dashboard')
-          .then((response) => response.data)
+        getDashboard()
           .then((response) => {
             vm.info = response
           })

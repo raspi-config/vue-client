@@ -92,6 +92,8 @@
 </template>
 
 <script>
+  import { getDashboard } from './services'
+
   export default {
     name: 'Dashboard',
     data () {
@@ -113,8 +115,7 @@
     methods: {
       getData: function () {
         const self = this
-        this.http.get('/pages/dashboard')
-          .then((response) => response.data)
+        getDashboard()
           .then((response) => {
             self.temperature = response.temperature
             self.memory = response.memory
