@@ -8,9 +8,7 @@
         <main role="main" class="col-sm-12 ml-sm-auto col-md-10 pt-3">
           <div class="row">
             <div class="col-12">
-              <app-success></app-success>
-              <app-warning></app-warning>
-              <app-danger></app-danger>
+              <app-alerts></app-alerts>
             </div>
           </div>
           <div class="row">
@@ -28,17 +26,15 @@
   import Header from '@/components/root/header'
   import Nav from '@/components/root/nav'
   import Loader from '@/components/general/loader'
-  import { success, warning, danger } from '@/components/root/alerts'
+  import Alerts from '@/components/root/alerts/index.vue'
 
   export default {
     name: 'app',
     components: {
       'app-header': Header,
       'app-nav': Nav,
-      'app-success': success,
-      'app-warning': warning,
-      'app-danger': danger,
-      'app-loader': Loader
+      'app-loader': Loader,
+      'app-alerts': Alerts
     }
   }
 </script>
