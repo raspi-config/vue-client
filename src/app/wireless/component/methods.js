@@ -15,8 +15,7 @@ export const methods = {
         this.info = response.info
       })
       .catch((err) => {
-        this.error.status = true
-        this.error.message = err.message
+        this.$store.dispatch('showAlert', {type: 'danger', message: err.message})
       })
   },
   save: function () {
@@ -48,10 +47,9 @@ export const methods = {
       })
   },
   reload: function () {
+    this.$store.dispatch('hideAlert', {type: 'danger'})
     this.wireless = {}
     this.info = {}
-    this.error.status = false
-    this.error.message = null
     this.getData()
   }
 }

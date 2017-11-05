@@ -10,10 +10,6 @@
     </div>
 
     <div class="card-body">
-      <div class="alert alert-danger alert-dismissible fade show" role="alert" v-if="error.status">
-        <strong>Atenção!</strong> {{error.message}}
-      </div>
-
       <div class="row">
         <div class="col col-sm-12 col-md-6">
           <form action="">
