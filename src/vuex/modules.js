@@ -1,3 +1,3 @@
-import { vuex as dashboard } from '../app'
+import { vuex as app } from '../app'
 
-export default {dashboard}
+export default {...app}
